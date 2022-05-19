@@ -1,0 +1,74 @@
+body{
+    margin: 0;
+    font-family: 'monospace';
+}
+
+header{
+    background-color: rgb(43, 101, 226); 
+    padding: 20px;
+}
+
+header > h2{
+    color: white;
+}
+
+.container{
+    margin: auto;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: 60%;
+}
+
+.row{
+    display: flex;
+}
+
+.col{
+    padding: 4px;
+}
+
+.container > img{
+    width: 100%;
+}
+
+footer{
+    display: flex;
+    padding: 24px;
+    background-color: rgb(43, 101, 226);
+    color: white;
+}
+
+.card{
+    width: 95%;
+    margin: auto;
+}
+
+@media screen and (max-width:500px){
+    footer{
+        display:  block;
+    }    
+}
+
+.a-edit{
+   color: aqua; 
+}
+
+.a-edit:hover{
+    color: aquamarine;
+    font-weight: bold;
+}
+.div-title{
+    background-color: rgb(82, 106, 246);
+    text-align: center;
+}
+
+.center{
+    background-color: rgb(82, 106, 246);
+    text-align: center;
+}
+.formulario{
+    margin-top: 18px;
+    padding: 8px;
+    border: blue 2px solid;
+    border-radius: 15px;
+}

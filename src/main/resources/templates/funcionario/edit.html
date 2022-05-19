@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../bootstrap-5.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../fontawesome-5.15.3/css/all.css">
+  <link rel="stylesheet" href="../../css/estilo.css">
+  <title>Gerencia de Projetos</title>
+</head>
+<body>
+ 
+  <header>
+    <h2> Gerencia de Projetos</h2>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">NewProjects</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Projetos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/funcionario/list">Funcionarios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/sobre">Sobre</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class = "container table-responsive">
+    <h2 class="center">Funcionario</h2>
+
+    <div th:if="${isSave}" class="alert alert-success">
+      <h4> Realizada com sucesso!</h4>
+    </div>
+
+    <div th:if="${isError}" class="alert alert-danger">
+      <h4> Erro ao tentar Salvar</h4>
+      <label th:text="#{errorMsg}"></label>
+    </div>
+
+    <form th:action="@{/funcionario/save}"
+    method="post" class="formulario"
+    th:object="${funcionario}"> 
+    <div class="form-floating mb-3">
+      <input style="margin-top: 1em;" type="number" th:field="${funcionario.id}" readonly class="form-control" id="floatingInputId" placeholder="Numero">
+      <label for="floatingInputId"> Código </label>
+    </div>
+      <div class="form-floating mb-3">
+        <input style="margin-top: 1em;" type="text" th:field="${funcionario.nome}" class="form-control" id="floatingInputNome" placeholder="Nome">
+        <label for="floatingInputNome"> Nome </label>
+      </div>
+      <div class="form-floating">
+        <input style="margin-top: 1em;" type="text" th:field="${funcionario.cpf}" class="form-control" id="floatingInputCpf" placeholder="Cpf">
+        <label for="floatingInputCpf"> Cpf </label>
+      </div>
+      <div class="form-floating">
+        <input style="margin-top: 1em;" type="text" th:field="${funcionario.telefone}" class="form-control" id="floatingInputTelefone" placeholder="Numero">
+        <label for="floatingInputTelefone"> Telefone </label>
+      </div>
+      <div class="form-floating">
+        <input style="margin-top: 1em;" type="email" th:field="${funcionario.email}" class="form-control" id="floatingInputEmail" placeholder="name@example.com">
+        <label for="floatingInputEmail"> Email</label>
+      </div>
+      <br>
+      <div class="form-floating mb-3">
+        <button type="submit" class="btn btn-success"> Salvar </button>
+
+        <button type="submit" class="btn btn-secondary"
+        onclick="window.location.href='../list'">Cancelar</button>
+      </div>
+    </form>
+</div>
+  
+  <footer>
+      <h4> Localização: </h4>
+      <ul>
+        <li> Senai CTAI</li>
+        <li> Rodovia, SC-401, 3740 - Saco Grande, Flotianópolis - SC, 88032-005</li>
+        <li> (48) 3239-5800</li>
+
+      </ul>
+    </div>
+      <h4> Contatos </h4>
+      <ul>
+        <li> turma3a@gmail.com</li>
+        <li>(48) 3239-5800</li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="../../js/jquery-3.6.0.min.js"></script>
+  <script src = "../../js/popper.min.js"> </script>
+  <script src="../../bootstrap-5.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
